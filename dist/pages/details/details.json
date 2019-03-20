@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "public-border": "../../components/PublicBorder/PublicBorder"
+  },
+  "navigationBarTitleText": "details"
+}

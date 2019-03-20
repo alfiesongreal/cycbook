@@ -1,0 +1,3 @@
+<block>
+    <image src="{{bg_border}}" class="border-img"></image>
+</block>

@@ -1,0 +1,8 @@
+<block>
+    <view class="index" bindtap="toDetails">
+        <public-border __triggerObserer="{{ _triggerObserer }}"></public-border>
+        <view class="img-box">
+            <image src="{{IndexImgage}}" class="index-image"></image>
+        </view>
+    </view>
+</block>
