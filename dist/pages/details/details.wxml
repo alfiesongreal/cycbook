@@ -2,7 +2,7 @@
     <view class="details" bindtap="changeAnimationBool">
         <public-border __triggerObserer="{{ _triggerObserer }}"></public-border>
         <view class="txt-box">
-            <block wx:if="{{isAnimation}}"><text class="txt-item">{{list[activeIndex]}}</text>
+            <block wx:if="{{isAnimation}}"><text class="{{addAnimateClass ? 'animated ' + animate_class_arr[rendomAnimateClass] : ''}}">{{list[activeIndex]}}</text>
             </block>
         </view>
     </view>

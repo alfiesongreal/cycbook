@@ -14,6 +14,8 @@ var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
+var _animate_class = require("../../util/animate_class.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36,7 +38,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["isAnimation", "list", "activeIndex"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["isAnimation", "addAnimateClass", "animate_class_arr", "rendomAnimateClass", "list", "activeIndex"], _this.config = {
       navigationBarTitleText: 'details'
     }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -50,7 +52,9 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       this.state = {
         list: ['Heallo details!', 'nihao', 'asdad'],
         activeIndex: 0,
-        isAnimation: true
+        isAnimation: true,
+        addAnimateClass: false,
+        rendomAnimateClass: ~~(Math.random() * 43)
       };
     }
   }, {
@@ -79,10 +83,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var _state = this.__state,
           list = _state.list,
           activeIndex = _state.activeIndex,
-          isAnimation = _state.isAnimation;
+          isAnimation = _state.isAnimation,
+          addAnimateClass = _state.addAnimateClass,
+          rendomAnimateClass = _state.rendomAnimateClass;
 
       console.log(activeIndex, 'activeIndex');
-      Object.assign(this.__state, {});
+      Object.assign(this.__state, {
+        animate_class_arr: _animate_class.animate_class_arr
+      });
       return this.__state;
     }
   }, {
@@ -90,6 +98,8 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     value: function changeAnimationBool() {
       var _this2 = this;
 
+      this.isClick();
+      this.rendomClass();
       this.setState(function () {
         return {
           isAnimation: false
@@ -97,6 +107,15 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       }, function () {
         _this2.changeTxt();
       });
+    }
+  }, {
+    key: "isClick",
+    value: function isClick() {
+      if (!this.state.addAnimateClass) {
+        this.setState({
+          addAnimateClass: true
+        });
+      }
     }
   }, {
     key: "changeTxt",
@@ -115,6 +134,24 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         return {
           activeIndex: newActiveIndex,
           isAnimation: true
+        };
+      });
+    }
+  }, {
+    key: "rendomClass",
+    value: function rendomClass() {
+      var _this3 = this;
+
+      this.setState(function () {
+        var r = _this3.state.rendomAnimateClass;
+        var num = void 0;
+        if (r < 43) {
+          num = r + 1;
+        } else {
+          num = 0;
+        }
+        return {
+          rendomAnimateClass: num
         };
       });
     }

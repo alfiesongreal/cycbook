@@ -1,1 +1,82 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _class,_temp2,_createClass=function(){function o(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(e,t,r){return t&&o(e.prototype,t),r&&o(e,r),e}}(),_get=function e(t,r,o){null===t&&(t=Function.prototype);var n=Object.getOwnPropertyDescriptor(t,r);if(void 0===n){var i=Object.getPrototypeOf(t);return null===i?void 0:e(i,r,o)}if("value"in n)return n.value;var u=n.get;return void 0!==u?u.call(o):void 0},_index=require("../../npm/@tarojs/taro-weapp/index.js"),_index2=_interopRequireDefault(_index);function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _possibleConstructorReturn(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function _inherits(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var bg_border="/assets/bgsbor.png",PublicBorder=(_temp2=_class=function(e){function u(){var e,t,r;_classCallCheck(this,u);for(var o=arguments.length,n=Array(o),i=0;i<o;i++)n[i]=arguments[i];return(t=r=_possibleConstructorReturn(this,(e=u.__proto__||Object.getPrototypeOf(u)).call.apply(e,[this].concat(n)))).$usedState=["bg_border"],r.$$refs=[],_possibleConstructorReturn(r,t)}return _inherits(u,_index.Component),_createClass(u,[{key:"_constructor",value:function(e){_get(u.prototype.__proto__||Object.getPrototypeOf(u.prototype),"_constructor",this).call(this,e)}},{key:"componentWillMount",value:function(){}},{key:"componentDidMount",value:function(){}},{key:"componentWillUnmount",value:function(){}},{key:"componentDidShow",value:function(){}},{key:"componentDidHide",value:function(){}},{key:"_createData",value:function(){this.__state=arguments[0]||this.state||{},this.__props=arguments[1]||this.props||{};arguments[2];return Object.assign(this.__state,{bg_border:bg_border}),this.__state}}]),u}(),_class.properties={},_class.$$events=[],_temp2);exports.default=PublicBorder,Component(require("../../npm/@tarojs/taro-weapp/index.js").default.createComponent(PublicBorder));
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _class, _temp2;
+
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var bg_border = "/assets/bgsbor.png";
+
+var PublicBorder = (_temp2 = _class = function (_BaseComponent) {
+  _inherits(PublicBorder, _BaseComponent);
+
+  function PublicBorder() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, PublicBorder);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PublicBorder.__proto__ || Object.getPrototypeOf(PublicBorder)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["bg_border"], _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(PublicBorder, [{
+    key: "_constructor",
+    value: function _constructor(props) {
+      _get(PublicBorder.prototype.__proto__ || Object.getPrototypeOf(PublicBorder.prototype), "_constructor", this).call(this, props);
+    }
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {}
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {}
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {}
+  }, {
+    key: "componentDidShow",
+    value: function componentDidShow() {}
+  }, {
+    key: "componentDidHide",
+    value: function componentDidHide() {}
+  }, {
+    key: "_createData",
+    value: function _createData() {
+      this.__state = arguments[0] || this.state || {};
+      this.__props = arguments[1] || this.props || {};
+      var __runloopRef = arguments[2];
+      ;
+      Object.assign(this.__state, {
+        bg_border: bg_border
+      });
+      return this.__state;
+    }
+  }]);
+
+  return PublicBorder;
+}(_index.Component), _class.properties = {}, _class.$$events = [], _temp2);
+exports.default = PublicBorder;
+
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(PublicBorder));
