@@ -3,6 +3,7 @@ import { View, Text } from '@tarojs/components'
 import './details.styl'
 import PublicBorder from "../../components/PublicBorder/PublicBorder"
 import {animate_class_arr} from "../../util/animate_class"
+import util from "../../util"
 
 export default class Index extends Component {
   constructor(props) {
@@ -21,6 +22,9 @@ export default class Index extends Component {
   config = {
     navigationBarTitleText: 'details'
   }
+  static options = {
+    addGlobalClass: true
+  }
 
   componentWillMount () { }
 
@@ -30,15 +34,19 @@ export default class Index extends Component {
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () {
+    util.themeChange()
+  }
 
   componentDidHide () { }
 
   render () {
     const {list,activeIndex,isAnimation,addAnimateClass,rendomAnimateClass}=this.state
-    console.log(activeIndex, 'activeIndex')
     return (
-      <View className='details' onClick={this.changeAnimationBool}>
+      <View className={
+        `details ${util.theme ?'bg-dayclo' : 'bl-bgcolor'} `
+        } 
+        onClick={this.changeAnimationBool}>
         <PublicBorder />
         <View className='txt-box'>
           {

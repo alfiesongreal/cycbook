@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
-
+import util from "./util"
 import  './app.styl'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -18,15 +18,15 @@ class App extends Component {
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#2c0741',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: '#2c0741'
     }
   }
 
-  componentDidMount () {}
+  componentDidMount () { }
 
-  componentDidShow () {}
+  componentDidShow () {
+    util.themeChange()
+  }
 
   componentDidHide () {}
 

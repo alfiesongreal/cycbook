@@ -161,12 +161,12 @@
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-weapp@1.2.20":
-  version "1.2.20"
-  resolved "http://registry.npm.taobao.org/@tarojs/taro-weapp/download/@tarojs/taro-weapp-1.2.20.tgz#b4a61c488da748f0de4ed237b7faa513ee2ff6c5"
+"@tarojs/taro-weapp@^1.2.21":
+  version "1.2.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/taro-weapp/download/@tarojs/taro-weapp-1.2.21.tgz#3bd71a5e0f7fce4bec7242810554e9695b460070"
   dependencies:
-    "@tarojs/taro" "1.2.20"
-    "@tarojs/utils" "1.2.20"
+    "@tarojs/taro" "1.2.21"
+    "@tarojs/utils" "1.2.21"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
@@ -174,9 +174,17 @@
   version "1.2.20"
   resolved "http://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-1.2.20.tgz#6d1017989f439236bd45b2ea023e407ab8474d24"
 
+"@tarojs/taro@1.2.21":
+  version "1.2.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-1.2.21.tgz#87eda010381802bd71ab690e6e4ce02080b485d7"
+
 "@tarojs/utils@1.2.20":
   version "1.2.20"
   resolved "http://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-1.2.20.tgz#7af8274b724f719ee52538b16411faf2c52d22e5"
+
+"@tarojs/utils@1.2.21":
+  version "1.2.21"
+  resolved "http://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-1.2.21.tgz#678547cb8233302a02223ec68e2e2da0eafb5db4"
 
 "@tarojs/webpack-runner@1.2.20":
   version "1.2.20"
@@ -476,10 +484,6 @@ ajv@^6.1.0, ajv@^6.5.5:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/amdefine/download/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
-
-animate.css@^3.7.0:
-  version "3.7.0"
-  resolved "http://registry.npm.taobao.org/animate.css/download/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
 
 ansi-colors@^3.0.0:
   version "3.2.4"

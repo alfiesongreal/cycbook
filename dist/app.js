@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -6,9 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _index = require('./npm/@tarojs/taro-weapp/index.js');
+var _index = require("./npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
+
+var _index3 = require("./util/index.js");
+
+var _index4 = _interopRequireDefault(_index3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42,31 +46,31 @@ var _App = function (_BaseComponent) {
       pages: ['pages/index/index', 'pages/details/details'],
       window: {
         backgroundTextStyle: 'light',
-        navigationBarBackgroundColor: '#2c0741',
-        navigationBarTitleText: 'WeChat',
-        navigationBarTextStyle: '#2c0741'
+        navigationBarTitleText: 'WeChat'
       }
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(_App, [{
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {}
   }, {
-    key: 'componentDidShow',
-    value: function componentDidShow() {}
+    key: "componentDidShow",
+    value: function componentDidShow() {
+      _index4.default.themeChange();
+    }
   }, {
-    key: 'componentDidHide',
+    key: "componentDidHide",
     value: function componentDidHide() {}
   }, {
-    key: 'componentDidCatchError',
+    key: "componentDidCatchError",
     value: function componentDidCatchError() {}
 
     // 在 App 类中的 render() 函数没有实际作用
     // 请勿修改此函数
 
   }, {
-    key: '_createData',
+    key: "_createData",
     value: function _createData() {}
   }]);
 

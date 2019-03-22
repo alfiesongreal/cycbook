@@ -1,6 +1,12 @@
 
-.border-img {
-  position: absolute;
-  height: 98%;
-  width: 91%;
+.borimg-box {
+  position: fixed;
+  top: 8Px;
+  bottom: 8Px;
+  left: 8Px;
+  right: 8Px;
+}
+.borimg-box .border-img {
+  width: 100%;
+  height: 100%;
 }

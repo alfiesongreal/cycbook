@@ -16,6 +16,10 @@ var _index2 = _interopRequireDefault(_index);
 
 var _animate_class = require("../../util/animate_class.js");
 
+var _index3 = require("../../util/index.js");
+
+var _index4 = _interopRequireDefault(_index3);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38,7 +42,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["isAnimation", "addAnimateClass", "animate_class_arr", "rendomAnimateClass", "list", "activeIndex"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["util", "isAnimation", "addAnimateClass", "animate_class_arr", "rendomAnimateClass", "list", "activeIndex"], _this.config = {
       navigationBarTitleText: 'details'
     }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -68,7 +72,9 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     value: function componentWillUnmount() {}
   }, {
     key: "componentDidShow",
-    value: function componentDidShow() {}
+    value: function componentDidShow() {
+      _index4.default.themeChange();
+    }
   }, {
     key: "componentDidHide",
     value: function componentDidHide() {}
@@ -87,8 +93,8 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           addAnimateClass = _state.addAnimateClass,
           rendomAnimateClass = _state.rendomAnimateClass;
 
-      console.log(activeIndex, 'activeIndex');
       Object.assign(this.__state, {
+        util: _index4.default,
         animate_class_arr: _animate_class.animate_class_arr
       });
       return this.__state;
@@ -158,7 +164,9 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
   }]);
 
   return Index;
-}(_index.Component), _class.properties = {}, _class.$$events = ["changeAnimationBool"], _temp2);
+}(_index.Component), _class.properties = {}, _class.$$events = ["changeAnimationBool"], _class.options = {
+  addGlobalClass: true
+}, _temp2);
 exports.default = Index;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Index, true));

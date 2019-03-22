@@ -1,12 +1,9 @@
 
 .details {
-  background: #2c0741;
   position: fixed;
   top: 0;
   bottom: 0;
   width: 100%;
-  color: #9f70bd;
-  padding: 8Px;
 }
 .details .txt-box {
   display: -webkit-box;
@@ -22,7 +19,8 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 95%;
+  z-index: 2;
+  position: relative;
 }
 .details .txt-box .txt-item {
   -webkit-animation: itemsin 2s ease-in;

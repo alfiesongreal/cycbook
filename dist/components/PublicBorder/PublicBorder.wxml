@@ -1,3 +1,5 @@
 <block>
-    <image src="{{bg_border}}" class="border-img"></image>
+    <view class="borimg-box">
+        <image src="{{util.theme ? bg : bg_border}}" class="border-img"></image>
+    </view>
 </block>

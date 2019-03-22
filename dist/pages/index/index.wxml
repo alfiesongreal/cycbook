@@ -1,8 +1,19 @@
 <block>
-    <view class="index" bindtap="toDetails">
-        <public-border __triggerObserer="{{ _triggerObserer }}"></public-border>
-        <view class="img-box">
-            <image src="{{IndexImgage}}" class="index-image"></image>
-        </view>
+    <view class="index">
+        <block>
+            <block wx:if="{{util.theme}}">
+                <view style="width:100%;height:100%" bindtap="toDetails">
+                    <image src="{{DuringBg}}" style="width:100%;height:100%;" class="index-image"></image>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="bl-bgcolor" style="width:100%;height:100%;" bindtap="toDetails">
+                    <public-border __triggerObserer="{{ _triggerObserer }}"></public-border>
+                    <view class="img-box">
+                        <image src="{{IndexImgage}}" class="index-image"></image>
+                    </view>
+                </view>
+            </block>
+        </block>
     </view>
 </block>

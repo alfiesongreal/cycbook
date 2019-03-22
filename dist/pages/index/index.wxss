@@ -1,12 +1,10 @@
 
 .index {
-  background: #2c0741;
   position: fixed;
   top: 0;
   bottom: 0;
   width: 100%;
   color: #9f70bd;
-  padding: 8Px;
 }
 .index .img-box {
   display: -webkit-box;
@@ -22,7 +20,6 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 95%;
 }
 .index .img-box .index-image {
   height: 80%;

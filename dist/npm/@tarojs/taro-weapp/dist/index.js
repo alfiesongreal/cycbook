@@ -1768,6 +1768,7 @@ var otherApis = {
   canvasPutImageData: true,
   setBackgroundColor: true,
   setBackgroundTextStyle: true,
+  getMenuButtonBoundingClientRect: true,
   // 第三方平台
   getExtConfig: true,
   // 开放接口
@@ -4351,7 +4352,7 @@ function canIUseWebp() {
 }
 
 function wxCloud(taro) {
-  var wxC = wx.cloud;
+  var wxC = wx.cloud || {};
   var wxcloud = {};
   var apiList = ['init', 'database', 'uploadFile', 'downloadFile', 'getTempFileURL', 'deleteFile', 'callFunction'];
   apiList.forEach(function (v) {

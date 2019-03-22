@@ -1,5 +1,5 @@
 <block>
-    <view class="details" bindtap="changeAnimationBool">
+    <view class="{{'details ' + (util.theme ? 'bg-dayclo' : 'bl-bgcolor') + ' '}}" bindtap="changeAnimationBool">
         <public-border __triggerObserer="{{ _triggerObserer }}"></public-border>
         <view class="txt-box">
             <block wx:if="{{isAnimation}}"><text class="{{addAnimateClass ? 'animated ' + animate_class_arr[rendomAnimateClass] : ''}}">{{list[activeIndex]}}</text>
