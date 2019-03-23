@@ -42,7 +42,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["util", "isAnimation", "addAnimateClass", "animate_class_arr", "rendomAnimateClass", "list", "activeIndex"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["util", "isAnimation", "addAnimateClass", "animate_class_arr", "rendomAnimateClass", "list", "activeIndex", "timer"], _this.config = {
       navigationBarTitleText: 'details'
     }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -58,7 +58,8 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         activeIndex: 0,
         isAnimation: true,
         addAnimateClass: false,
-        rendomAnimateClass: ~~(Math.random() * 43)
+        rendomAnimateClass: ~~(Math.random() * 43),
+        timer: true
       };
     }
   }, {
@@ -66,10 +67,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     value: function componentWillMount() {}
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      this.shake();
+    }
   }, {
     key: "componentWillUnmount",
-    value: function componentWillUnmount() {}
+    value: function componentWillUnmount() {
+      this.unshake();
+    }
   }, {
     key: "componentDidShow",
     value: function componentDidShow() {
@@ -130,16 +135,11 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           list = _state2.list,
           activeIndex = _state2.activeIndex;
 
-      var newActiveIndex = void 0;
       this.setState(function () {
-        if (activeIndex >= list.length - 1) {
-          newActiveIndex = 0;
-        } else {
-          newActiveIndex = activeIndex + 1;
-        }
         return {
-          activeIndex: newActiveIndex,
-          isAnimation: true
+          activeIndex: activeIndex >= list.length - 1 ? 0 : activeIndex + 1,
+          isAnimation: true,
+          timer: true
         };
       });
     }
@@ -150,16 +150,32 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
 
       this.setState(function () {
         var r = _this3.state.rendomAnimateClass;
-        var num = void 0;
-        if (r < 43) {
-          num = r + 1;
-        } else {
-          num = 0;
-        }
         return {
-          rendomAnimateClass: num
+          rendomAnimateClass: r < 43 ? r + 1 : 0
         };
       });
+    }
+  }, {
+    key: "shake",
+    value: function shake() {
+      var _this4 = this;
+
+      _index2.default.startAccelerometer();
+      _index2.default.onAccelerometerChange(function (res) {
+        if (_this4.state.timer) {
+          if (res.x > 1 && res.y > 1) {
+            _this4.setState({
+              timer: null
+            });
+            _this4.changeAnimationBool();
+          }
+        }
+      });
+    }
+  }, {
+    key: "unshake",
+    value: function unshake() {
+      _index2.default.stopAccelerometer();
     }
   }]);
 

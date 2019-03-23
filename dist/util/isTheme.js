@@ -10,8 +10,9 @@ var _dayjsMin2 = _interopRequireDefault(_dayjsMin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var t = (0, _dayjsMin2.default)().hour();
 exports.default = {
-  theme: 18 > (0, _dayjsMin2.default)().hour() && (0, _dayjsMin2.default)().hour() > 6 ? true : false,
+  theme: 18 > t && t > 5 ? true : false,
   themeChange: function themeChange() {
     this.theme ? wx.setNavigationBarColor({
       backgroundColor: '#d9a9d4',

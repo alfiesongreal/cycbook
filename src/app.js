@@ -24,9 +24,7 @@ class App extends Component {
 
   componentDidMount () { }
 
-  componentDidShow () {
-    util.themeChange()
-  }
+  componentDidShow () { }
 
   componentDidHide () {}
 

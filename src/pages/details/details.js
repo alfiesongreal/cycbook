@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './details.styl'
 import PublicBorder from "../../components/PublicBorder/PublicBorder"
+import PublicFooter from "../../components/PublicFooter/PublicFooter"
 import {animate_class_arr} from "../../util/animate_class"
 import util from "../../util"
 
@@ -15,7 +16,8 @@ export default class Index extends Component {
       activeIndex:0,
       isAnimation:true,
       addAnimateClass:false,
-      rendomAnimateClass: ~~(Math.random() * 43)
+      rendomAnimateClass: ~~(Math.random() * 43),
+      timer:true
     }
   }
   
@@ -29,10 +31,12 @@ export default class Index extends Component {
   componentWillMount () { }
 
   componentDidMount () { 
-    
+    this.shake()
   }
 
-  componentWillUnmount () { }
+  componentWillUnmount () {
+    this.unshake()
+  }
 
   componentDidShow () {
     util.themeChange()
@@ -45,22 +49,23 @@ export default class Index extends Component {
     return (
       <View className={
         `details ${util.theme ?'bg-dayclo' : 'bl-bgcolor'} `
-        } 
-        onClick={this.changeAnimationBool}>
+        }>
         <PublicBorder />
-        <View className='txt-box'>
+        <View className='txt-content'>
           {
             isAnimation && 
-            <Text className = {
-              addAnimateClass ? `animated ${animate_class_arr[rendomAnimateClass]}` : ''
-            }> 
-              {
-                list[activeIndex]
-              } 
-            </Text>
+            <View className="txt-box" onClick={this.changeAnimationBool}>
+              <Text className = {
+                addAnimateClass ? `animated ${animate_class_arr[rendomAnimateClass]}` : ''
+              }> 
+                {
+                  list[activeIndex]
+                } 
+              </Text>
+            </View>
           }
          </View>
-         {/* txt-item */}
+         <PublicFooter/>
       </View>
     )
   }
@@ -69,7 +74,7 @@ export default class Index extends Component {
     this.rendomClass()
     this.setState(()=>{
       return {
-        isAnimation: false
+        isAnimation: false,
       }
     }, 
     () => {
@@ -85,33 +90,38 @@ export default class Index extends Component {
   }
   changeTxt(){
     const {list,activeIndex}=this.state
-    let newActiveIndex;
     this.setState(()=>{
-      if (activeIndex >= list.length - 1) {
-        newActiveIndex=0
-      }else{
-        newActiveIndex=activeIndex+1
-      }
       return{
-        activeIndex: newActiveIndex,
-         isAnimation: true
+        activeIndex: activeIndex >= list.length - 1 ? 0 : activeIndex + 1,
+        isAnimation: true,
+        timer: true
       }
     })
   }
   rendomClass(){
     this.setState(()=>{
       const r = this.state.rendomAnimateClass
-      let num;
-      if (r < 43) {
-        num = r + 1
-      }else{
-        num=0
-      }
       return{
-        rendomAnimateClass:num
+        rendomAnimateClass: r < 43 ? r + 1 : 0
       }
     })
     
+  }
+  shake(){
+    Taro.startAccelerometer()
+    Taro.onAccelerometerChange( (res)=> {
+      if (this.state.timer){
+         if (res.x > 1 && res.y > 1) {
+           this.setState({
+             timer:null
+           })
+           this.changeAnimationBool()
+         }
+      }
+    })
+  }
+  unshake(){
+    Taro.stopAccelerometer()
   }
 
 }

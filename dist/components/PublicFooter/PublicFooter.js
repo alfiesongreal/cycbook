@@ -26,8 +26,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var IndexImgage = "/assets/indeximage.png";
-var DuringBg = "/assets/duringbg.png";
+var dayicon = "/assets/dayicon.png";
+var duricon = "/assets/duricon.png";
 
 var Index = (_temp2 = _class = function (_BaseComponent) {
   _inherits(Index, _BaseComponent);
@@ -43,25 +43,22 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["util", "DuringBg", "IndexImgage"], _this.config = {
-      navigationBarTitleText: '首页'
-    }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2"], _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
     key: "_constructor",
     value: function _constructor(props) {
       _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), "_constructor", this).call(this, props);
-      this.toDetails = this.toDetails.bind(this);
+      this.toHome = this.toHome.bind(this);
+      this.imgSrc = this.imgSrc.bind(this, _index4.default.theme);
     }
   }, {
     key: "componentWillMount",
     value: function componentWillMount() {}
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {
-      _index4.default.themeChange();
-    }
+    value: function componentDidMount() {}
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {}
@@ -78,26 +75,31 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       this.__props = arguments[1] || this.props || {};
       var __runloopRef = arguments[2];
       ;
+      var anonymousState__temp = this.imgSrc();
+      var anonymousState__temp2 = this.imgSrc();
       Object.assign(this.__state, {
-        util: _index4.default,
-        DuringBg: DuringBg,
-        IndexImgage: IndexImgage
+        anonymousState__temp: anonymousState__temp,
+        anonymousState__temp2: anonymousState__temp2
       });
       return this.__state;
     }
   }, {
-    key: "toDetails",
-    value: function toDetails() {
-      _index2.default.navigateTo({
-        url: '/pages/details/details'
-      });
+    key: "toHome",
+    value: function toHome(e) {
+      e.stopPropagation();
+      _index2.default.navigateBack();
+    }
+  }, {
+    key: "imgSrc",
+    value: function imgSrc(theme) {
+      return theme ? dayicon : duricon;
     }
   }]);
 
   return Index;
-}(_index.Component), _class.properties = {}, _class.$$events = ["toDetails"], _class.options = {
+}(_index.Component), _class.properties = {}, _class.$$events = ["toHome"], _class.options = {
   addGlobalClass: true
 }, _temp2);
 exports.default = Index;
 
-Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Index, true));
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Index));

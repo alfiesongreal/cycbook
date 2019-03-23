@@ -1,0 +1,6 @@
+<block>
+    <view class="bottom-box">
+        <image class="bottom-icon" src="{{anonymousState__temp}}"></image><text class="bottom-txt" catchtap="toHome">关上书页</text>
+        <image class="bottom-icon" src="{{anonymousState__temp2}}"></image>
+    </view>
+</block>

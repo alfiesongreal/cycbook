@@ -22,7 +22,9 @@ export default class Index extends Component {
   }
   componentWillMount () { }
 
-  componentDidMount () { }
+  componentDidMount () {
+     util.themeChange()
+  }
 
   componentWillUnmount () { }
 
@@ -53,7 +55,6 @@ export default class Index extends Component {
     )
   }
   toDetails(){
-    console.log('to_details')
     Taro.navigateTo({
       url: '/pages/details/details'
     })

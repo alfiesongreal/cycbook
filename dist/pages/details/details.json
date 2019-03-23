@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "public-border": "../../components/PublicBorder/PublicBorder"
+    "public-border": "../../components/PublicBorder/PublicBorder",
+    "public-footer": "../../components/PublicFooter/PublicFooter"
   },
   "navigationBarTitleText": "details"
 }
