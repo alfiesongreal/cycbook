@@ -12,11 +12,11 @@ export default class Index extends Component {
     this.changeAnimationBool = this.changeAnimationBool.bind(this)
     this.changeTxt=this.changeTxt.bind(this)
     this.state ={
-      list: ['Heallo details!','nihao','asdad'],
-      activeIndex:0,
+      list: util.list,
+      activeIndex: ~~(Math.random() * util.list.length),
       isAnimation:true,
       addAnimateClass:false,
-      rendomAnimateClass: ~~(Math.random() * 43),
+      rendomAnimateClass: ~~(Math.random() * 44),
       timer:true
     }
   }
@@ -92,7 +92,7 @@ export default class Index extends Component {
     const {list,activeIndex}=this.state
     this.setState(()=>{
       return{
-        activeIndex: activeIndex >= list.length - 1 ? 0 : activeIndex + 1,
+        activeIndex: activeIndex >= list.length-1 ? 0 : activeIndex + 1,
         isAnimation: true,
         timer: true
       }

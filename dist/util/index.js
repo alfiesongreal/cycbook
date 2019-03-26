@@ -10,6 +10,10 @@ var _isTheme = require("./isTheme.js");
 
 var _isTheme2 = _interopRequireDefault(_isTheme);
 
+var _list = require("./list.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _extends({}, _isTheme2.default);
+exports.default = _extends({}, _isTheme2.default, {
+  list: _list.list
+});

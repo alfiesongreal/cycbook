@@ -54,11 +54,11 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       this.changeAnimationBool = this.changeAnimationBool.bind(this);
       this.changeTxt = this.changeTxt.bind(this);
       this.state = {
-        list: ['Heallo details!', 'nihao', 'asdad'],
-        activeIndex: 0,
+        list: _index4.default.list,
+        activeIndex: ~~(Math.random() * _index4.default.list.length),
         isAnimation: true,
         addAnimateClass: false,
-        rendomAnimateClass: ~~(Math.random() * 43),
+        rendomAnimateClass: ~~(Math.random() * 44),
         timer: true
       };
     }

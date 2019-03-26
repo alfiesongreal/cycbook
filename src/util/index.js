@@ -1,5 +1,6 @@
 import isTheme from "./isTheme"
-
+import {list} from "./list"
 export default {
-  ...isTheme
+  ...isTheme,
+  list
 }
