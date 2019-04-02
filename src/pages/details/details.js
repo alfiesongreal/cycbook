@@ -22,7 +22,7 @@ export default class Index extends Component {
   }
   
   config = {
-    navigationBarTitleText: 'details'
+    navigationBarTitleText: '超越宝书'
   }
   static options = {
     addGlobalClass: true
