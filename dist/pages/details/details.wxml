@@ -3,7 +3,7 @@
         <public-border __triggerObserer="{{ _triggerObserer }}"></public-border>
         <view class="txt-content">
             <block wx:if="{{isAnimation}}">
-                <view class="txt-box" bindtap="changeAnimationBool"><text class="{{addAnimateClass ? 'animated ' + animate_class_arr[rendomAnimateClass] : ''}}">{{list[activeIndex]}}</text>
+                <view class="txt-box" bindtap="changeAnimationBool"><text class="{{'animated ' + animate_class_arr[rendomAnimateClass]}}">{{list[activeIndex]}}</text>
                 </view>
             </block>
         </view>
