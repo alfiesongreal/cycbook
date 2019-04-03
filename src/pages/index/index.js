@@ -15,7 +15,7 @@ export default class Index extends Component {
     this.toDetails = this.toDetails.bind(this)
   }
   config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '超越宝书'
   }
   static options = {
     addGlobalClass: true
