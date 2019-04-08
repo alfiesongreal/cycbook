@@ -15,7 +15,7 @@ export default class Index extends Component {
       list: util.list,
       activeIndex: ~~(Math.random() * util.list.length),
       isAnimation:true,
-      addAnimateClass:true,
+      addAnimateClass:false,
       rendomAnimateClass: ~~(Math.random() * 17),
       timer:true
     }
@@ -56,7 +56,7 @@ export default class Index extends Component {
             isAnimation && 
             <View className="txt-box" onClick={this.changeAnimationBool}>
               <Text className = {
-                `animated ${animate_class_arr[rendomAnimateClass]}`
+                addAnimateClass ?`animated ${animate_class_arr[rendomAnimateClass]}` : ''
               }> 
                 {
                   list[activeIndex]
@@ -70,6 +70,7 @@ export default class Index extends Component {
     )
   }
   changeAnimationBool(){
+    this.isClick()
     this.rendomClass()
     this.setState(()=>{
       return {
@@ -79,6 +80,13 @@ export default class Index extends Component {
     () => {
       this.changeTxt()
     })
+  }
+  isClick() {
+    if (!this.state.addAnimateClass) {
+      this.setState({
+        addAnimateClass: true
+      })
+    }
   }
   changeTxt(){
     const {list,activeIndex}=this.state
